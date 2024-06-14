@@ -1,5 +1,6 @@
 import UIKit
 
-let value = Date(year: 2002, month: 12, day: 10)
+let targetDate = Date(year: 1990, month: 5, day: 11, hour: 17, minute: 30, second: 0)
+let event = Event(title: "Hello world", date: targetDate, backgroundColor: UIColor.systemPink, fontColor: UIColor.systemGray2, icon: "wedding")
 
-Date.today.days(from: value)
+event.daysString
