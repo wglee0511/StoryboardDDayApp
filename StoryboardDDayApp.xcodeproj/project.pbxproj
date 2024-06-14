@@ -15,6 +15,7 @@
 		E422E5B52C1A95C700A448FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E422E5B32C1A95C700A448FD /* LaunchScreen.storyboard */; };
 		E422E5BF2C1C287E00A448FD /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5BE2C1C287E00A448FD /* DateUtil.swift */; };
 		E422E5C32C1C306100A448FD /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C22C1C306100A448FD /* event.swift */; };
+		E422E5C62C1C408300A448FD /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C52C1C408300A448FD /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E422E5BE2C1C287E00A448FD /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		E422E5C02C1C2D2700A448FD /* Util.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Util.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E422E5C22C1C306100A448FD /* event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
+		E422E5C52C1C408300A448FD /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		E422E5A72C1A95C700A448FD /* StoryboardDDayApp */ = {
 			isa = PBXGroup;
 			children = (
+				E422E5C42C1C406500A448FD /* components */,
 				E422E5C12C1C305500A448FD /* model */,
 				E422E5BD2C1C286800A448FD /* util */,
 				E422E5A82C1A95C700A448FD /* AppDelegate.swift */,
@@ -91,6 +94,14 @@
 				E422E5C22C1C306100A448FD /* event.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		E422E5C42C1C406500A448FD /* components */ = {
+			isa = PBXGroup;
+			children = (
+				E422E5C52C1C408300A448FD /* EventTableViewCell.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E422E5C62C1C408300A448FD /* EventTableViewCell.swift in Sources */,
 				E422E5AD2C1A95C700A448FD /* ViewController.swift in Sources */,
 				E422E5BF2C1C287E00A448FD /* DateUtil.swift in Sources */,
 				E422E5A92C1A95C700A448FD /* AppDelegate.swift in Sources */,
