@@ -15,27 +15,30 @@ struct Event {
     let fontColor: UIColor
     let icon: String
     
-    var daysString: String? {
-        guard let days = date.days(from: Date.today) else {
-            return nil
+    let daysString: String?
+    let dateString: String?
+    let iconImage: UIImage?
+    
+    init(title: String, date: Date, backgroundColor: UIColor, fontColor: UIColor, icon: String) {
+        self.title = title
+        self.date = date
+        self.backgroundColor = backgroundColor
+        self.fontColor = fontColor
+        self.icon = icon
+        
+        if let days = date.days(from: Date.today) {
+            daysString = days >= 0 ? "D -\(abs(days))" :  "D +\(abs(days))"
+        } else {
+            daysString = nil
         }
         
-        if days >= 0 {
-            return "D -\(abs(days))"
-        } else {
-            return "D +\(abs(days))"
-        }
-    }
-    
-    var dateString: String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         
-        return dateFormatter.string(from: date)
-    }
-    
-    var iconImage: UIImage? {
-        return UIImage(named: icon)
+        dateString = dateFormatter.string(from: date)
+        iconImage = UIImage(named: icon)
+
+        
     }
 }
 
