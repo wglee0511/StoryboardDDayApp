@@ -20,13 +20,25 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return dummyEvents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sheet = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventTableViewCell.self), for: indexPath) as! EventTableViewCell
         
-        return sheet
+        let target = dummyEvents[indexPath.row]
+        
+        cell.iconImageView.image = target.iconImage
+        cell.dateLabel.text = target.dateString
+        cell.daysLabel.text = target.daysString
+        cell.containerView.backgroundColor = target.backgroundColor
+        cell.titleLabel.text = target.title
+        
+        cell.dateLabel.textColor = target.fontColor
+        cell.daysLabel.textColor = target.fontColor
+        cell.titleLabel.textColor = target.fontColor
+        
+        return cell
     }
     
     

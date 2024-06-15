@@ -109,6 +109,7 @@
                                                         <constraint firstItem="XLq-tb-4KH" firstAttribute="leading" secondItem="OL5-tZ-cf2" secondAttribute="leading" constant="16" id="RA9-mH-rsf"/>
                                                         <constraint firstAttribute="trailing" secondItem="XLq-tb-4KH" secondAttribute="trailing" constant="16" id="llv-II-P8V"/>
                                                         <constraint firstItem="2Th-Wz-aKc" firstAttribute="leading" secondItem="OL5-tZ-cf2" secondAttribute="leading" constant="16" id="nS6-ea-5ao"/>
+                                                        <constraint firstAttribute="bottom" secondItem="XLq-tb-4KH" secondAttribute="bottom" constant="8" id="rWh-AO-dgO"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

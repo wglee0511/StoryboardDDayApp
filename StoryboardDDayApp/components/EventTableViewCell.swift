@@ -18,6 +18,8 @@ class EventTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        containerView.layer.cornerRadius = 20
+        containerView.clipsToBounds = true
         // Initialization code
     }
 
