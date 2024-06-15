@@ -16,6 +16,8 @@
 		E422E5BF2C1C287E00A448FD /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5BE2C1C287E00A448FD /* DateUtil.swift */; };
 		E422E5C32C1C306100A448FD /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C22C1C306100A448FD /* event.swift */; };
 		E422E5C62C1C408300A448FD /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C52C1C408300A448FD /* EventTableViewCell.swift */; };
+		E422E5C82C1D5AF500A448FD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C72C1D5AF500A448FD /* CategoryCollectionViewCell.swift */; };
+		E422E5CA2C1D5BF100A448FD /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C92C1D5BF100A448FD /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E422E5C02C1C2D2700A448FD /* Util.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Util.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E422E5C22C1C306100A448FD /* event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
 		E422E5C52C1C408300A448FD /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		E422E5C72C1D5AF500A448FD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E422E5C92C1D5BF100A448FD /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				E422E5AA2C1A95C700A448FD /* SceneDelegate.swift */,
 				E422E5AC2C1A95C700A448FD /* ViewController.swift */,
 				E422E5AE2C1A95C700A448FD /* Main.storyboard */,
+				E422E5C92C1D5BF100A448FD /* CategoryViewController.swift */,
 				E422E5B12C1A95C700A448FD /* Assets.xcassets */,
 				E422E5B32C1A95C700A448FD /* LaunchScreen.storyboard */,
 				E422E5B62C1A95C700A448FD /* Info.plist */,
@@ -100,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				E422E5C52C1C408300A448FD /* EventTableViewCell.swift */,
+				E422E5C72C1D5AF500A448FD /* CategoryCollectionViewCell.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -179,7 +185,9 @@
 				E422E5AD2C1A95C700A448FD /* ViewController.swift in Sources */,
 				E422E5BF2C1C287E00A448FD /* DateUtil.swift in Sources */,
 				E422E5A92C1A95C700A448FD /* AppDelegate.swift in Sources */,
+				E422E5CA2C1D5BF100A448FD /* CategoryViewController.swift in Sources */,
 				E422E5AB2C1A95C700A448FD /* SceneDelegate.swift in Sources */,
+				E422E5C82C1D5AF500A448FD /* CategoryCollectionViewCell.swift in Sources */,
 				E422E5C32C1C306100A448FD /* event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

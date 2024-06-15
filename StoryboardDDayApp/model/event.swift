@@ -19,6 +19,44 @@ struct Event {
     let dateString: String?
     let iconImage: UIImage?
     
+    enum Category: String, CaseIterable {
+        case birthday
+        case briefcase
+        case diet
+        case love
+        case wedding
+        case exam
+        case travel
+        case baseball
+        case basketball
+        case football
+        
+        var title: String {
+            switch self {
+            case .birthday:
+               return "셍일"
+            case .briefcase:
+                return "업무"
+            case .diet:
+                return "다이어트"
+            case .love:
+                return "데이트"
+            case .wedding:
+                return "결혼"
+            case .exam:
+                return "시험"
+            case .travel:
+                return "여행"
+            case .baseball:
+                return "야구"
+            case .basketball:
+                return "농구"
+            case .football:
+                return "축구"
+            }
+        }
+    }
+    
     init(title: String, date: Date, backgroundColor: UIColor, fontColor: UIColor, icon: String) {
         self.title = title
         self.date = date
