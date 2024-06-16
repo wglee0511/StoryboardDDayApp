@@ -10,6 +10,8 @@ import UIKit
 class ComposeViewController: UIViewController {
     
     var composeData: ComposeData?
+    var selectedBackgroundIndex: IndexPath?
+    var selectedFontIndex: IndexPath?
     
     let colors: [UIColor] = [
         .systemRed,
@@ -26,12 +28,9 @@ class ComposeViewController: UIViewController {
         .black,
         .white
     ]
-
+    
     @IBOutlet weak var backgroundColorCollectionView: UICollectionView!
-    
-    
     @IBOutlet weak var textColorCollectionView: UICollectionView!
-    
     @IBOutlet weak var titleTextFiled: UITextField!
     
     @IBAction func onPressSave(_ sender: Any) {
@@ -51,10 +50,34 @@ class ComposeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var randomNumber = Int.random(in: 0 ..< colors.count)
+        selectedBackgroundIndex = IndexPath(item: randomNumber, section: 0)
+        composeData?.backgroundColor = colors[randomNumber]
+        backgroundColorCollectionView.reloadData()
+        
+        randomNumber = Int.random(in: 0 ..< colors.count)
+        selectedFontIndex = IndexPath(item: randomNumber, section: 0)
+        composeData?.fontColor = colors[randomNumber]
+        textColorCollectionView.reloadData()
+        
+        titleTextFiled.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if titleTextFiled.isFirstResponder {
+            titleTextFiled.resignFirstResponder()
+        }
+    }
+    
 }
 
 extension ComposeViewController: UICollectionViewDataSource {
@@ -78,10 +101,17 @@ extension ComposeViewController: UICollectionViewDataSource {
             cell.colorPickerImageView.tintColor = targetColor
         }
         
+        cell.checkBoxImageView.isHidden = true
+        
+        if let selectedBackgroundIndex, selectedBackgroundIndex == indexPath, collectionView == backgroundColorCollectionView {
+            cell.checkBoxImageView.isHidden = false
+        } else if let selectedFontIndex, selectedFontIndex == indexPath,
+                  collectionView == textColorCollectionView {
+            cell.checkBoxImageView.isHidden = false
+        }
+        
         return cell
     }
-    
-    
 }
 
 extension ComposeViewController: UICollectionViewDelegate {
@@ -102,6 +132,28 @@ extension ComposeViewController: UICollectionViewDelegate {
                 composeData?.fontColor = targetColor
             }
         }
+        
+        if collectionView == backgroundColorCollectionView {
+            if let selectedBackgroundIndex, selectedBackgroundIndex != indexPath {
+                
+                let cell = collectionView.cellForItem(at: selectedBackgroundIndex) as? ColorPickerCollectionViewCell
+                cell?.checkBoxImageView.isHidden = true
+            }
+            
+            selectedBackgroundIndex = indexPath
+        } else {
+            if let selectedFontIndex, selectedFontIndex != indexPath {
+                
+                let cell = collectionView.cellForItem(at: selectedFontIndex) as? ColorPickerCollectionViewCell
+                cell?.checkBoxImageView.isHidden = true
+            }
+            
+            selectedFontIndex = indexPath
+        }
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? ColorPickerCollectionViewCell {
+            cell.checkBoxImageView.isHidden = false
+        }
     }
 }
 
@@ -112,12 +164,50 @@ extension ComposeViewController: UIColorPickerViewControllerDelegate {
     }
     
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
-        let isBackgroundColor = viewController.title == "배경색"
-        
-        if isBackgroundColor {
-            composeData?.backgroundColor = color
-        } else {
-            composeData?.fontColor = color
+        if !continuously {
+            
+            let indexPath = IndexPath(item: colors.count, section: 0)
+            let isBackgroundColor = viewController.title == "배경색"
+            
+            if isBackgroundColor {
+                composeData?.backgroundColor = color
+                
+                if let selectedBackgroundIndex, selectedBackgroundIndex != indexPath {
+                    if let collectionViewValue = backgroundColorCollectionView.cellForItem(at: selectedBackgroundIndex) as? ColorPickerCollectionViewCell{
+                        collectionViewValue.checkBoxImageView.isHidden = true
+                    }
+                }
+                
+                selectedFontIndex = indexPath
+                
+                if let collectionViewValue = backgroundColorCollectionView.cellForItem(at: indexPath) as? ColorPickerCollectionViewCell{
+                    collectionViewValue.checkBoxImageView.isHidden = false
+                }
+                
+            } else {
+                composeData?.fontColor = color
+                
+                if let selectedFontIndex, selectedFontIndex != indexPath {
+                    if let collectionViewValue = textColorCollectionView.cellForItem(at: selectedFontIndex) as? ColorPickerCollectionViewCell{
+                        collectionViewValue.checkBoxImageView.isHidden = true
+                    }
+                }
+                
+                selectedFontIndex = indexPath
+                
+                if let collectionViewValue = textColorCollectionView.cellForItem(at: indexPath) as? ColorPickerCollectionViewCell{
+                    collectionViewValue.checkBoxImageView.isHidden = false
+                }
+            }
         }
+    }
+}
+
+
+extension ComposeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        onPressSave(self)
+        
+        return true
     }
 }

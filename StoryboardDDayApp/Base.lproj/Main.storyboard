@@ -368,16 +368,27 @@
                                                         <constraint firstAttribute="width" constant="50" id="kUL-xs-PaF"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z9a-nU-FHy">
+                                                    <rect key="frame" x="11.666666666666664" y="12.666666666666666" width="24" height="22.666666666666679"/>
+                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="GPH-op-d8W"/>
+                                                        <constraint firstAttribute="height" constant="24" id="yAt-TJ-1U7"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="moF-o6-an5" firstAttribute="top" secondItem="opA-pT-7eF" secondAttribute="top" id="5L0-Uo-ot1"/>
                                                 <constraint firstItem="moF-o6-an5" firstAttribute="leading" secondItem="opA-pT-7eF" secondAttribute="leading" id="gYD-oW-tAH"/>
                                                 <constraint firstAttribute="bottom" secondItem="moF-o6-an5" secondAttribute="bottom" id="n07-T6-h9R"/>
+                                                <constraint firstItem="Z9a-nU-FHy" firstAttribute="centerX" secondItem="opA-pT-7eF" secondAttribute="centerX" id="qng-SO-GVf"/>
+                                                <constraint firstItem="Z9a-nU-FHy" firstAttribute="centerY" secondItem="opA-pT-7eF" secondAttribute="centerY" id="s5q-A7-QaJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="moF-o6-an5" secondAttribute="trailing" id="wjk-Mf-GZn"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="47" height="47"/>
                                         <connections>
+                                            <outlet property="checkBoxImageView" destination="Z9a-nU-FHy" id="d36-Sd-ZeL"/>
                                             <outlet property="colorPickerImageView" destination="moF-o6-an5" id="A1b-wj-a29"/>
                                         </connections>
                                     </collectionViewCell>
@@ -420,16 +431,27 @@
                                                         <constraint firstAttribute="height" constant="50" id="Zfe-ll-ClI"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cfr-eU-W8j">
+                                                    <rect key="frame" x="11.666666666666664" y="12.666666666666666" width="24" height="22.666666666666679"/>
+                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="1ci-kl-C94"/>
+                                                        <constraint firstAttribute="height" constant="24" id="x9F-8T-RKI"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="7nm-Jj-Dao" secondAttribute="trailing" id="EDS-ac-ifE"/>
                                                 <constraint firstItem="7nm-Jj-Dao" firstAttribute="leading" secondItem="GAD-8f-iSZ" secondAttribute="leading" id="Iak-aj-ij7"/>
                                                 <constraint firstItem="7nm-Jj-Dao" firstAttribute="top" secondItem="GAD-8f-iSZ" secondAttribute="top" id="Obk-IO-8R2"/>
                                                 <constraint firstAttribute="bottom" secondItem="7nm-Jj-Dao" secondAttribute="bottom" id="YQj-Va-t50"/>
+                                                <constraint firstItem="cfr-eU-W8j" firstAttribute="centerX" secondItem="GAD-8f-iSZ" secondAttribute="centerX" id="kaJ-Sd-sK6"/>
+                                                <constraint firstItem="cfr-eU-W8j" firstAttribute="centerY" secondItem="GAD-8f-iSZ" secondAttribute="centerY" id="lij-lB-3Lu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="47" height="47"/>
                                         <connections>
+                                            <outlet property="checkBoxImageView" destination="cfr-eU-W8j" id="5Vr-uX-Hzo"/>
                                             <outlet property="colorPickerImageView" destination="7nm-Jj-Dao" id="aKS-yU-nii"/>
                                         </connections>
                                     </collectionViewCell>
@@ -445,6 +467,9 @@
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="g99-ar-YkJ" id="FJV-vK-JTr"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4F-E2-wpa">
                                 <rect key="frame" x="16" y="266" width="361" height="20"/>
@@ -495,6 +520,7 @@
     </scenes>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="97"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <image name="color-picker" width="256" height="256"/>
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>

@@ -10,4 +10,7 @@ import UIKit
 class ColorPickerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var colorPickerImageView: UIImageView!
     
+
+    @IBOutlet weak var checkBoxImageView: UIImageView!
+    
 }
