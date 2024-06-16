@@ -13,7 +13,7 @@ struct Event {
     
     let backgroundColor: UIColor
     let fontColor: UIColor
-    let icon: String
+    let category: Category
     
     let daysString: String?
     let dateString: String?
@@ -57,36 +57,48 @@ struct Event {
         }
     }
     
-    init(title: String, date: Date, backgroundColor: UIColor, fontColor: UIColor, icon: String) {
+    init(title: String, date: Date, backgroundColor: UIColor, fontColor: UIColor, category: Category) {
         self.title = title
         self.date = date
         self.backgroundColor = backgroundColor
         self.fontColor = fontColor
-        self.icon = icon
+        self.category = category
         
-        if let days = date.days(from: Date.today) {
-            daysString = days >= 0 ? "D - \(abs(days))" :  "D + \(abs(days))"
-        } else {
-            daysString = nil
+        switch category {
+        case .birthday:
+            if let days = date.upcomingBirthDay.days(from: Date.today) {
+                daysString = days >= 0 ? "D - \(abs(days))" :  "D + \(abs(days))"
+            } else {
+                daysString = nil
+            }
+            
+        default:
+            if let days = date.days(from: Date.today) {
+                daysString = days >= 0 ? "D - \(abs(days))" :  "D + \(abs(days))"
+            } else {
+                daysString = nil
+            }
+            
         }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         
         dateString = dateFormatter.string(from: date)
-        iconImage = UIImage(named: icon)
+        iconImage = UIImage(named: category.rawValue)
 
         
     }
     
     init(composeDate: ComposeData) {
-        self.init(title: composeDate.title!, date: composeDate.date!, backgroundColor: composeDate.backgroundColor!, fontColor: composeDate.fontColor!, icon: composeDate.category!.rawValue)
+        self.init(title: composeDate.title!, date: composeDate.date!, backgroundColor: composeDate.backgroundColor!, fontColor: composeDate.fontColor!, category: composeDate.category!)
     }
 }
 
 
 var dummyEvents = [
-    Event(title: "크리스마스", date: Date(year: 2024, month: 12, day: 25, hour: 0, minute: 0, second: 0), backgroundColor: .systemBlue, fontColor: .white, icon: "love"),
-    Event(title: "재원이 결혼식", date: Date(year: 2024, month: 5, day: 12, hour: 11, minute: 0, second: 0), backgroundColor: .systemPink, fontColor: .white, icon: "wedding"),
-    Event(title: "일본 여행", date: Date(year: 2024, month: 5, day: 15), backgroundColor: .green, fontColor: .black, icon: "travel")
+    Event(title: "크리스마스", date: Date(year: 2024, month: 12, day: 25, hour: 0, minute: 0, second: 0), backgroundColor: .systemBlue, fontColor: .white, category: .love),
+    Event(title: "재원이 결혼식", date: Date(year: 2024, month: 5, day: 12, hour: 11, minute: 0, second: 0), backgroundColor: .systemPink, fontColor: .white, category: .wedding),
+    Event(title: "일본 여행", date: Date(year: 2024, month: 5, day: 15), backgroundColor: .green, fontColor: .black, category: .travel),
+    Event(title: "생일", date: Date(year: 2024, month: 5, day: 11), backgroundColor: .cyan, fontColor: .black, category: .birthday)
 ]

@@ -40,4 +40,21 @@ extension Date {
         return calendar.startOfDay(for: .now)
     }
     
+    var upcomingBirthDay: Date {
+        let calendar = Calendar.autoupdatingCurrent
+        let thisYear = calendar.component(.year, from: Self.today)
+        
+        var component = calendar.dateComponents([.month, .day], from: self)
+        component.year = thisYear
+        
+        var targetData = calendar.date(from: component)
+        
+        if let targetData, targetData < Self.today {
+            component.year = thisYear + 1
+            return calendar.date(from: component) ?? self
+        }
+        
+        return targetData ?? self
+    }
+    
 }
