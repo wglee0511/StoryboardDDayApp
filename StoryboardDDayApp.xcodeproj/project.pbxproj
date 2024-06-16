@@ -19,6 +19,8 @@
 		E422E5C82C1D5AF500A448FD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C72C1D5AF500A448FD /* CategoryCollectionViewCell.swift */; };
 		E422E5CA2C1D5BF100A448FD /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E5C92C1D5BF100A448FD /* CategoryViewController.swift */; };
 		E4F02B672C1F147F00B1C7DF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B662C1F147F00B1C7DF /* DatePickerViewController.swift */; };
+		E4F02B692C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B682C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift */; };
+		E4F02B6B2C1F201A00B1C7DF /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B6A2C1F201A00B1C7DF /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		E422E5C72C1D5AF500A448FD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E422E5C92C1D5BF100A448FD /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E4F02B662C1F147F00B1C7DF /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		E4F02B682C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4F02B6A2C1F201A00B1C7DF /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				E422E5C92C1D5BF100A448FD /* CategoryViewController.swift */,
 				E422E5B12C1A95C700A448FD /* Assets.xcassets */,
 				E422E5B32C1A95C700A448FD /* LaunchScreen.storyboard */,
+				E4F02B6A2C1F201A00B1C7DF /* ComposeViewController.swift */,
 				E4F02B662C1F147F00B1C7DF /* DatePickerViewController.swift */,
 				E422E5B62C1A95C700A448FD /* Info.plist */,
 			);
@@ -109,6 +114,7 @@
 			children = (
 				E422E5C52C1C408300A448FD /* EventTableViewCell.swift */,
 				E422E5C72C1D5AF500A448FD /* CategoryCollectionViewCell.swift */,
+				E4F02B682C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -190,6 +196,8 @@
 				E422E5BF2C1C287E00A448FD /* DateUtil.swift in Sources */,
 				E422E5A92C1A95C700A448FD /* AppDelegate.swift in Sources */,
 				E422E5CA2C1D5BF100A448FD /* CategoryViewController.swift in Sources */,
+				E4F02B6B2C1F201A00B1C7DF /* ComposeViewController.swift in Sources */,
+				E4F02B692C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift in Sources */,
 				E422E5AB2C1A95C700A448FD /* SceneDelegate.swift in Sources */,
 				E422E5C82C1D5AF500A448FD /* CategoryCollectionViewCell.swift in Sources */,
 				E422E5C32C1C306100A448FD /* event.swift in Sources */,
