@@ -65,7 +65,7 @@ struct Event {
         self.icon = icon
         
         if let days = date.days(from: Date.today) {
-            daysString = days >= 0 ? "D -\(abs(days))" :  "D +\(abs(days))"
+            daysString = days >= 0 ? "D - \(abs(days))" :  "D + \(abs(days))"
         } else {
             daysString = nil
         }
