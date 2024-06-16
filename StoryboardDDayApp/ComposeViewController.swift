@@ -9,6 +9,8 @@ import UIKit
 
 class ComposeViewController: UIViewController {
     
+    var composeData: ComposeData?
+    
     let colors: [UIColor] = [
         .systemRed,
         .systemBlue,
@@ -33,6 +35,18 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var titleTextFiled: UITextField!
     
     @IBAction func onPressSave(_ sender: Any) {
+        guard let text = titleTextFiled.text else { return }
+        
+        composeData?.title = text
+        
+        if let composeData {
+            let composeDataEventValue = Event(composeDate: composeData)
+            
+            dummyEvents.append(composeDataEventValue)
+            NotificationCenter.default.post(name: .INSERT_DATE_DATA, object: nil)
+            
+            dismiss(animated: true)
+        }
     }
     
     override func viewDidLoad() {
@@ -82,7 +96,11 @@ extension ComposeViewController: UICollectionViewDelegate {
         } else {
             let targetColor = colors[indexPath.item]
             
-            
+            if collectionView == backgroundColorCollectionView {
+                composeData?.backgroundColor = targetColor
+            } else {
+                composeData?.fontColor = targetColor
+            }
         }
     }
 }
@@ -94,7 +112,12 @@ extension ComposeViewController: UIColorPickerViewControllerDelegate {
     }
     
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
+        let isBackgroundColor = viewController.title == "배경색"
         
-        
+        if isBackgroundColor {
+            composeData?.backgroundColor = color
+        } else {
+            composeData?.fontColor = color
+        }
     }
 }

@@ -21,6 +21,8 @@
 		E4F02B672C1F147F00B1C7DF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B662C1F147F00B1C7DF /* DatePickerViewController.swift */; };
 		E4F02B692C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B682C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift */; };
 		E4F02B6B2C1F201A00B1C7DF /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B6A2C1F201A00B1C7DF /* ComposeViewController.swift */; };
+		E4F02B6D2C1F30DB00B1C7DF /* composeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B6C2C1F30DB00B1C7DF /* composeData.swift */; };
+		E4F02B702C1F38DD00B1C7DF /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F02B6F2C1F38DD00B1C7DF /* notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		E4F02B662C1F147F00B1C7DF /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		E4F02B682C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4F02B6A2C1F201A00B1C7DF /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		E4F02B6C2C1F30DB00B1C7DF /* composeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composeData.swift; sourceTree = "<group>"; };
+		E4F02B6F2C1F38DD00B1C7DF /* notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		E422E5A72C1A95C700A448FD /* StoryboardDDayApp */ = {
 			isa = PBXGroup;
 			children = (
+				E4F02B6E2C1F38CA00B1C7DF /* notifications */,
 				E422E5C42C1C406500A448FD /* components */,
 				E422E5C12C1C305500A448FD /* model */,
 				E422E5BD2C1C286800A448FD /* util */,
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				E422E5C22C1C306100A448FD /* event.swift */,
+				E4F02B6C2C1F30DB00B1C7DF /* composeData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -117,6 +123,14 @@
 				E4F02B682C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		E4F02B6E2C1F38CA00B1C7DF /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E4F02B6F2C1F38DD00B1C7DF /* notifications.swift */,
+			);
+			path = notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,12 +206,14 @@
 			files = (
 				E422E5C62C1C408300A448FD /* EventTableViewCell.swift in Sources */,
 				E422E5AD2C1A95C700A448FD /* ViewController.swift in Sources */,
+				E4F02B702C1F38DD00B1C7DF /* notifications.swift in Sources */,
 				E4F02B672C1F147F00B1C7DF /* DatePickerViewController.swift in Sources */,
 				E422E5BF2C1C287E00A448FD /* DateUtil.swift in Sources */,
 				E422E5A92C1A95C700A448FD /* AppDelegate.swift in Sources */,
 				E422E5CA2C1D5BF100A448FD /* CategoryViewController.swift in Sources */,
 				E4F02B6B2C1F201A00B1C7DF /* ComposeViewController.swift in Sources */,
 				E4F02B692C1F1E4600B1C7DF /* ColorPickerCollectionViewCell.swift in Sources */,
+				E4F02B6D2C1F30DB00B1C7DF /* composeData.swift in Sources */,
 				E422E5AB2C1A95C700A448FD /* SceneDelegate.swift in Sources */,
 				E422E5C82C1D5AF500A448FD /* CategoryCollectionViewCell.swift in Sources */,
 				E422E5C32C1C306100A448FD /* event.swift in Sources */,

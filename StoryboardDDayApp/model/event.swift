@@ -78,6 +78,10 @@ struct Event {
 
         
     }
+    
+    init(composeDate: ComposeData) {
+        self.init(title: composeDate.title!, date: composeDate.date!, backgroundColor: composeDate.backgroundColor!, fontColor: composeDate.fontColor!, icon: composeDate.category!.rawValue)
+    }
 }
 
 

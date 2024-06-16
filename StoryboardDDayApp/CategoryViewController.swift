@@ -9,6 +9,8 @@ import UIKit
 
 class CategoryViewController: UIViewController {
     
+    var composeData = ComposeData()
+    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     func setLayout () {
@@ -29,22 +31,21 @@ class CategoryViewController: UIViewController {
         categoryCollectionView.collectionViewLayout = layout
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UICollectionViewCell, let indexPath = categoryCollectionView.indexPath(for: cell) {
+            composeData.category = Event.Category.allCases[indexPath.item]
+            
+            if let nextViewController = segue.destination as? DatePickerViewController {
+                nextViewController.composeData = composeData
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
